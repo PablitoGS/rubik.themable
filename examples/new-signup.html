@@ -1,136 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="ISO-8859-15">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Alta</title>
-	<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
+	<head>
+		<meta charset="ISO-8859-15">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Alta</title>
+		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-	<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" /
+		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
 
-	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
-	<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+	</head>
 
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<!-- Header landing -->
+				<header class="global-nav global-nav-landing">
+					<nav>
+						<ul>
+							<li>
+								<ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-left clearfix">
+									<li>
+										<a class="active logo" id="hdrLinkToHome" href="/">
+											<img src="http://media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png" />
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+		          <!-- / Header landing -->
 
-	<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+				<div class="panel-canvas">
+					<div class="row-centered inner inner-expanded">
+						<h1 class="text-center">Crea tu cuenta</h1>
 
-</head>
+						<ol class="steps">
+							<li class="text-center step-focus"><span class="hide-small-device">Paso&nbsp;</span>1. Step One</li>
+							<li class="text-center"><span class="hide-small-device">Paso&nbsp;</span> 2. Step Two</li>
+						</ol>
 
-<body>
-	<div class="wrapper">
-		<div class="container">
+						<!-- formulario de alta -->
+						<form class="default form1" method="post" id="myForm" action="/candidate/registration/run.xhtml">
+							<fieldset>
+								<legend class="fieldset-title bold">Datos personales</legend>
+								<ul class="form--field-block clearfix">
+									<li id="li_uname" name="li_uname">
+										<label for="uname" id="nom">Nombre</label>
+										<input type="text" name="nombre" id="uname" value="" onblur="javascript:validateUserName();" maxlength="50" />
+									</li>
+									<li id="li_apellido" name="li_apellido">
+										<label for="apellido" id="cognom">Primer Apellido</label>
+										<input type="text" maxlength="50" name="apellido1" id="apellido" value="" onblur="javascript:validateSurname();" />
+									</li>
+								</ul>
+							</fieldset>
 
+							<fieldset>
+								<legend class="fieldset-title bold">Datos de la cuenta</legend>
+								<ul class="form--field-block clearfix">
+									<li id="li_email" name="li_email">
+										<label for="email" id="label_email" name="label_email">Email</label>
+										<input type="text" maxlength="50" name="email" id="email" value="" onblur="javascript:validateEmail();" data-vars="{&quot;registered_already_href&quot;:&quot;/candidate/candidate-login/candidate-login.xhtml&quot;,&quot;validation&quot;:true}" />
+									</li>
 
-
-			<!-- Header landing -->
-			          <header class="global-nav global-nav-landing">
-			              <nav>
-			                  <ul>
-			                      <li>
-			                          <ul id="nav-mobile" class="nav-bar nav-bar-top nav-bar-top-left clearfix">
-			                              <li>
-			                                 <a class="active logo" id="hdrLinkToHome" href="/">
-			                                  	<img src="http://media.infojobs.net/portales/ij//appgrade/emails/logo-ij.png" />
-			                                  </a>
-			                              </li>
-			                          </ul>
-			                      </li>
-			                  </ul>
-			              </nav>
-			          </header>
-			          <!-- / Header landing -->
-
-
-						<div class="panel-canvas">
-							<div class="row-centered inner inner-expanded">
-
-			                    <ol class="steps">
-			                        <li class="text-center step-focus"><span class="hide-small-device">Paso&nbsp;</span>1. Step One</li>
-			                        <li class="text-center"><span class="hide-small-device">Paso&nbsp;</span> 2. Step Two</li>
-			                    </ol>
-
-			    				<h1 class="text-center">Crea tu cuenta</h1>
-
-			        			<!-- formulario de alta -->
-								<form class="default form1" method="post" id="myForm" action="/candidate/registration/run.xhtml">
-									<input type="hidden" id="noTerceros" name="noTerceros" />
-									<fieldset>
-			                            <legend class="fieldset-title bold">Datos personales</legend>
-										<ul class="form--field-block clearfix">
-											<li id="li_uname" name="li_uname">
-												<label for="uname" id="nom">Nombre</label>
-												<input type="text" name="nombre" id="uname" value="" onblur="javascript:validateUserName();" maxlength="50" />
-											</li>
-											<li id="li_apellido" name="li_apellido">
-												<label for="apellido" id="cognom">Primer Apellido</label>
-												<input type="text" maxlength="50" name="apellido1" id="apellido" value="" onblur="javascript:validateSurname();" />
-											</li>
-			                            </ul>
-			                        </fieldset>
-									<fieldset>
-			                            <legend class="fieldset-title bold">Datos de la cuenta</legend>
-			                            <ul class="form--field-block clearfix">
-
-					<li id="li_email" name="li_email">
-						<label for="email" id="label_email" name="label_email">Email</label>
-						<input type="text" maxlength="50" name="email" id="email" value="" onblur="javascript:validateEmail();" data-vars="{&quot;registered_already_href&quot;:&quot;/candidate/candidate-login/candidate-login.xhtml&quot;,&quot;validation&quot;:true}" />
-					</li>
-
-
-					<li id="li_password" name="li_password" class="fieldhelp password clearfix">
-						<label for="password" id="label_password">Contraseña</label>
-						<input type="password" maxlength="20" name="password" id="password" onblur="javascript:validatePassword(false);" data-vars="{&quot;validation&quot;:true}" placeholder="Mí­nimo 8 caracteres" />
-						<a href="#" onclick="showHidePassword()" id="mostrar">Mostrar</a>
-					</li>
-
-
-										</ul>
-										<input name="comoNosConociste" type="hidden" />
-										<input name="especificaComoNosConociste" type="hidden" />
-									</fieldset>
-
-									<br />
-									<div>
-										<span>Al continuar aceptas las</span>
-										<a id="link_condiciones" href="/lex.xhtml" onclick="openWindowWithXiti(this, &#39;new_registration_go_to_condicionesLegales&#39;); return false;" target="_blank" class="link">Condiciones de uso</a>
-										<span>y la</span>
-
-
-					<div class="generic-modal" data-callback="" id="id-emailTerceros" data-vars="{&quot;titleH1&quot;:&quot;Política de enví­o de emails&quot;,&quot;closeTitle&quot;:&quot;&quot;}" data-contentwrapper="contentWrapper-emailTerceros" data-openelement="link-emailTerceros">
-						<a href="javascript:void(0);" class="js-modal-open link" id="link-emailTerceros">Polí­tica de enví­o de emails</a>
-					</div>
-
-					<div style="display:none" id="contentWrapper-emailTerceros">
-						<div class="inner">
-
+									<li id="li_password" name="li_password" class="fieldhelp password clearfix">
+										<label for="password" id="label_password">Contraseña</label>
+										<input type="password" maxlength="20" name="password" id="password" onblur="javascript:validatePassword(false);" data-vars="{&quot;validation&quot;:true}" placeholder="Mí­nimo 8 caracteres" />
+										<a href="#" onclick="showHidePassword()" id="mostrar">Mostrar</a>
+									</li>
+								</ul>
+								<input name="comoNosConociste" type="hidden" />
+								<input name="especificaComoNosConociste" type="hidden" />
+							</fieldset>
 							<div>
-					    <h2 class="h3">Promociones de empleo y formaciÃ³n</h2>
-					    <div id="email-politics">
-					        <form id="email-terceros-form" name="email-terceros-form" action="#">
-								<fieldset>
-									<div class="list-default clearfix">
-				                		<input id="checkTerceros" name="checkTerceros" type="checkbox" onclick="javascript:setTercerosCheckbox()" />
-				                		<label>No quiero recibir promociones relacionadas con empleo, formaciÃ³n y otros por parte de empresas con las que InfoJobs mantiene acuerdos. En ningÃºn caso cederemos tus datos a estas empresas.</label>
-			                        </div>
-			                      </fieldset>
-			                   </form>
-			            </div>
-			        </div>
-						</div>
-					</div>
+								<span>Al continuar aceptas las</span>
+								<a id="link_condiciones" href="/lex.xhtml" onclick="openWindowWithXiti(this, &#39;new_registration_go_to_condicionesLegales&#39;); return false;" target="_blank" class="link">Condiciones de uso</a>
+								<span>y la</span>
+								<div class="generic-modal" data-callback="" id="id-emailTerceros" data-vars="{&quot;titleH1&quot;:&quot;Política de enví­o de emails&quot;,&quot;closeTitle&quot;:&quot;&quot;}" data-contentwrapper="contentWrapper-emailTerceros" data-openelement="link-emailTerceros">
+									<a href="javascript:void(0);" class="js-modal-open link" id="link-emailTerceros">Polí­tica de enví­o de emails</a>
+								</div>
 
-
+							<div style="display:none" id="contentWrapper-emailTerceros">
+								<div class="inner">
+									<div>
+										<h2 class="h3">Promociones de empleo y formación</h2>
+										<div id="email-politics">
+											<form id="email-terceros-form" name="email-terceros-form" action="#">
+												<fieldset>
+													<div class="list-default clearfix">
+													<input id="checkTerceros" name="checkTerceros" type="checkbox" onclick="javascript:setTercerosCheckbox()" />
+													<label>No quiero recibir promociones relacionadas con empleo, formaciÃ³n y otros por parte de empresas con las que InfoJobs mantiene acuerdos. En ningÃºn caso cederemos tus datos a estas empresas.</label>
+													</div>
+												</fieldset>
+											</form>
+										</div>
 									</div>
-
-									<div class="submit">
-										<button id="create_candidate" class="btn btn-primary margin-top" type="submit" onclick="javascript:validateForm()">Crea tu cuenta</button>
-									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 
+						<div class="submit">
+							<button id="create_candidate" class="btn btn-primary margin-top" type="submit" onclick="javascript:validateForm()">Crea tu cuenta</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
-
 </body>
 </html>
