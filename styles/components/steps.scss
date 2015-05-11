@@ -20,6 +20,7 @@ Markup:
 
 	@include display-flex;
 	@include vendor-prefix('flex-flow', 'row wrap');
+	margin-bottom: 40px;
 
     li {
 
