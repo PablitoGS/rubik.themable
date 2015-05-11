@@ -122,7 +122,23 @@ input[type="radio"] + label,
 .label-checkbox { //class ".label-checkbox" deprecated. actualy used in filters only
 	cursor: pointer;
 	width: 85%;
+}
 
+.password {
+	position: relative;
+
+	a {
+		position: absolute;
+		top: 26px;
+		right: 1px;
+		padding: 11px;
+
+		@include mediaquery ($bp-desktop) {
+			top: 25px;
+			right: 5px 10px;
+			padding: 5px;
+		}
+	}
 }
 
 /*
