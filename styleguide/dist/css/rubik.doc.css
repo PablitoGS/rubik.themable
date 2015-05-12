@@ -246,6 +246,20 @@ Styleguide 1.1.2
   }
 }
 
+.row-centered {
+  width: 100%;
+}
+@media only screen and (min-width: 769px) {
+  .row-centered {
+    width: 486px;
+    margin: 0 auto;
+  }
+}
+.row-centered input,
+.row-centered textarea {
+  width: 100%;
+}
+
 /*
 Inner containers #disabled#
 
@@ -317,6 +331,12 @@ Styleguide 1.2.4
 .img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+img[alt] {
+  background: none;
+  border: 0;
+  word-wrap: break-word;
 }
 
 .section {
@@ -924,6 +944,7 @@ Styleguide 1.1.1.3
     display: -webkit-flex;
     display: flex;
     float: none;
+    overflow: hidden;
   }
   .row-faux .col-12-medium {
     display: block;
@@ -3291,6 +3312,9 @@ label {
 .error label:first-of-type {
   color: #bf2102;
 }
+.success label:first-of-type {
+  color: #00a550;
+}
 .panel-executive label {
   color: #bebebe;
 }
@@ -3322,6 +3346,11 @@ textarea {
 .error input, .error
 textarea {
   border-color: #bf2102;
+}
+.success input, .success
+textarea {
+  border-color: #00a550;
+  background: #effaf6;
 }
 
 input {
@@ -3372,6 +3401,23 @@ input[type="radio"] + label,
 .label-checkbox {
   cursor: pointer;
   width: 85%;
+}
+
+.password {
+  position: relative;
+}
+.password a {
+  position: absolute;
+  top: 26px;
+  right: 1px;
+  padding: 11px;
+}
+@media only screen and (min-width: 769px) {
+  .password a {
+    top: 25px;
+    right: 5px 10px;
+    padding: 5px;
+  }
 }
 
 /*
@@ -8350,7 +8396,6 @@ $query2     = width, device-width
 }
 .search-bar-main {
   padding: 10px;
-  background-color: #2088c2;
 }
 .search-bar-main label {
   color: #fff;
@@ -9872,9 +9917,6 @@ $query2     = width, device-width
 .tips-list li:last-child {
   border: none;
 }
-.tips-list li > div {
-  position: relative;
-}
 @media only screen and (min-width: 481px) {
   .tips-list li > div {
     display: -webkit-box;
@@ -10379,17 +10421,26 @@ Markup:
 	</div>
 	<div class="body">
 		<h3 class="title"><a href="#">Juan Manuel RodrÃÂguez</a></h3>
-		<p>Account Manager jasdlf sadf dsakfjasd lfkjasd <span class="alternative">en Schibsted Classified Media Spain</span></p>
+		<p>Account Manager <span class="alternative">en Schibsted Classified Media Spain</span></p>
 	</div>
 </div>
 
 */
-.content-media .media,
 .content-media .body {
-  display: table-cell;
-  vertical-align: top;
+  margin-left: 70px;
+}
+@media only screen and (min-width: 481px) {
+  .content-media .body {
+    margin-left: 80px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .content-media .body {
+    margin-left: 100px;
+  }
 }
 .content-media .media {
+  float: left;
   padding-right: 20px;
   width: 70px;
 }
@@ -10405,6 +10456,7 @@ Markup:
 }
 .content-media .title {
   margin: 0;
+  word-wrap: break-word;
 }
 @media only screen and (min-width: 769px) {
   .content-media img {
@@ -10418,6 +10470,90 @@ li.content-media + .content-media::before {
   content: "";
   border-top: 1px solid #e2e5e6;
   top: -20px;
+}
+
+/* Variables =================================================== */
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+/**
+ * cross multiplication percentages
+ */
+/**
+ * Turn numbers with units into unitless numbers
+ */
+/*------------------------------------*\
+$MIXINS
+\*------------------------------------*/
+/*
+Mediaqueries
+
+$breakpoint = $bp-tablet, $bp-desktop or specific
+$query1     = min or max
+$query2     = width, device-width
+
+*/
+/*------------------------------------*\
+    $PLACEHOLDERS
+\*------------------------------------*/
+.tag-group li.tag-divider, .links-bar li {
+  border-right: 1px solid #e2e5e6;
+  border-radius: 0;
+}
+
+/*------------------------------------*\
+    $STEPS
+\*------------------------------------*/
+/*
+Steps
+
+Markup:
+<ol class="steps">
+	<li class="step-focus">Paso </span>1. Step One</li>
+	<li>2. Step Two</li>
+</ol>
+
+*/
+.steps {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  -o-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-bottom: 40px;
+}
+.steps li {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+  overflow: hidden;
+  color: #999;
+  border-bottom: 2px solid;
+}
+.steps li + li {
+  margin-left: 10px;
+}
+.steps .step-focus {
+  color: inherit;
+  border-bottom: 2px solid #2088c2;
+}
+.steps .text-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /* Variables =================================================== */
