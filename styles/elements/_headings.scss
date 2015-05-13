@@ -51,11 +51,12 @@ h3,
 }
 
 h1 {
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 	font-size: $xlarge-font-size;
 	line-height: $xlarge-line-height;
 
 	@include mediaquery ($bp-desktop) {
+		margin-bottom: 35px;
 		font-size: $xxlarge-font-size;
 		line-height: $xxlarge-line-height;
 	}

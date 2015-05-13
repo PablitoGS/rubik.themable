@@ -2735,12 +2735,13 @@ h3, .skin-executive
 }
 
 h1 {
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   font-size: 25px;
   line-height: 28px;
 }
 @media only screen and (min-width: 769px) {
   h1 {
+    margin-bottom: 35px;
     font-size: 30px;
     line-height: 33px;
   }
@@ -3352,6 +3353,11 @@ textarea {
   border-color: #00a550;
   background: #effaf6;
 }
+input:focus,
+textarea:focus {
+  border: 1px solid #2088c2;
+  outline: none;
+}
 
 input {
   height: 30px;
@@ -3401,23 +3407,6 @@ input[type="radio"] + label,
 .label-checkbox {
   cursor: pointer;
   width: 85%;
-}
-
-.password {
-  position: relative;
-}
-.password a {
-  position: absolute;
-  top: 26px;
-  right: 1px;
-  padding: 11px;
-}
-@media only screen and (min-width: 769px) {
-  .password a {
-    top: 25px;
-    right: 5px 10px;
-    padding: 5px;
-  }
 }
 
 /*
@@ -3783,6 +3772,54 @@ Styleguide 1.4.7
     padding: 10px;
   }
 }
+.password {
+  position: relative;
+}
+.password a {
+  position: absolute;
+  top: 26px;
+  right: 1px;
+  font-size: 14px;
+  line-height: 13px;
+  padding: 15px 10px;
+}
+@media only screen and (min-width: 769px) {
+  .password a {
+    top: 25px;
+    right: 5px 10px;
+    padding: 8px;
+  }
+}
+.password input {
+  margin-bottom: 10px;
+}
+.password meter {
+  width: 100%;
+  height: 7px;
+  vertical-align: top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  /* WebKit */
+  /* Firefox */
+}
+.password meter::-webkit-meter-bar {
+  background: #f2f2f2;
+}
+.password meter::-webkit-meter-optimum-value, .password meter::-webkit-meter-suboptimum-value {
+  background: #00a550;
+}
+.password meter::-webkit-meter-even-less-good-value {
+  background: #bf2102;
+}
+.password meter:-moz-meter-optimum::-moz-meter-bar, .password meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: #00a550;
+}
+.password meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: #bf2102;
+}
+
 /*
 Common CSS #casper#
 
@@ -10537,7 +10574,7 @@ Markup:
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding: 0 10px;
+  padding: 0 5px;
   overflow: hidden;
   color: #999;
   border-bottom: 2px solid;
