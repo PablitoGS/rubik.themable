@@ -72,6 +72,11 @@ textarea {
 		border-color: $bamboo;
 		background: $light-bamboo;
 	}
+
+	&:focus {
+		border: 1px solid $day-blue;
+		outline: none;
+	}
 }
 
 input {
@@ -131,11 +136,13 @@ input[type="radio"] + label,
 		position: absolute;
 		top: 26px;
 		right: 1px;
-		padding: 11px;
+		line-height: $xsmall-line-height;
+		padding: 15px 10px;
 
 		@include mediaquery ($bp-desktop) {
 			top: 25px;
 			right: 5px 10px;
+<<<<<<< HEAD
 			padding: 6px;
 		}
 	}
@@ -179,6 +186,9 @@ input[type="radio"] + label,
 
 		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
 		  background: $trueblood;
+=======
+			padding: 8px;
+>>>>>>> bcd62a0a667730414f8f3116f7606ab0a3412e95
 		}
 	}
 }
