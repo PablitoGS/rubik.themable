@@ -129,70 +129,6 @@ input[type="radio"] + label,
 	width: 85%;
 }
 
-.password {
-	position: relative;
-
-	a {
-		position: absolute;
-		top: 26px;
-		right: 1px;
-		line-height: $xsmall-line-height;
-		padding: 15px 10px;
-
-		@include mediaquery ($bp-desktop) {
-			top: 25px;
-			right: 5px 10px;
-<<<<<<< HEAD
-			padding: 6px;
-		}
-	}
-
-	input {
-		margin-bottom: 10px;
-	}
-
-	meter {
-		width: 100%;
-		height: 7px;
-		vertical-align: top;
-
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-
-		background: $dark-shiro;
-
-
-		/* WebKit */
-		&::-webkit-meter-bar {
-			background: $dark-shiro;
-		}
-
-		&::-webkit-meter-optimum-value,
-		&::-webkit-meter-suboptimum-value {
-			background: $bamboo;
-		}
-
-		&::-webkit-meter-even-less-good-value  {
-			background: $trueblood;
-		}
-
-
-		/* Firefox */
-		&:-moz-meter-optimum::-moz-meter-bar,
-		&:-moz-meter-sub-optimum::-moz-meter-bar {
-		  background: $bamboo;
-		}
-
-		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-		  background: $trueblood;
-=======
-			padding: 8px;
->>>>>>> bcd62a0a667730414f8f3116f7606ab0a3412e95
-		}
-	}
-}
-
 /*
 Forms structure #disabled#
 
@@ -592,5 +528,67 @@ Styleguide 1.4.7
 	.chosen-container-single .chosen-single {
 		margin-top: 2px;
 		padding: 10px;
+	}
+}
+
+.password {
+	position: relative;
+
+	a {
+		position: absolute;
+		top: 26px;
+		right: 1px;
+		font-size: $small-font-size;
+		line-height: $xsmall-line-height;
+		padding: 15px 10px;
+
+		@include mediaquery ($bp-desktop) {
+			top: 25px;
+			right: 5px 10px;
+			padding: 8px;
+		}
+	}
+
+	input {
+		margin-bottom: 10px;
+	}
+
+	meter {
+		width: 100%;
+		height: 7px;
+		vertical-align: top;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		background: $dark-shiro;
+
+
+		/* WebKit */
+		&::-webkit-meter-bar {
+			background: $dark-shiro;
+		}
+
+		&::-webkit-meter-optimum-value,
+		&::-webkit-meter-suboptimum-value {
+			background: $bamboo;
+		}
+
+		&::-webkit-meter-even-less-good-value  {
+			background: $trueblood;
+		}
+
+
+		/* Firefox */
+		&:-moz-meter-optimum::-moz-meter-bar,
+		&:-moz-meter-sub-optimum::-moz-meter-bar {
+		  background: $bamboo;
+		}
+
+		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+		  background: $trueblood;
+
+		}
 	}
 }
