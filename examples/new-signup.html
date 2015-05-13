@@ -6,9 +6,16 @@
 		<title>Alta</title>
 		<link rel="stylesheet" type="text/css" href="../styleguide/styleguide/public/rubik.css" />
 
-		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" /
+		<link rel="stylesheet" type="text/css" href="../styles/rubik.css" />
 		<link rel="stylesheet" type="text/css" href="../styles/components/panels.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/components/meter-polyfill.css">
+
 		<link rel="stylesheet" type="text/css" href="../styles/generics/tools.css">
+
+		
+		<script src="../js/meter-polyfill.js"></script>
+
+
 
 	</head>
 
@@ -69,7 +76,11 @@
 									<li id="li_password" name="li_password" class="fieldhelp password clearfix">
 										<label for="password" id="label_password">Contraseña</label>
 										<input type="password" maxlength="20" name="password" id="password" onblur="javascript:validatePassword(false);" data-vars="{&quot;validation&quot;:true}" placeholder="Mí­nimo 8 caracteres" />
-										<a href="#" onclick="showHidePassword()" id="mostrar">Mostrar</a>
+										<a href="#" class="small">Mostrar</a>
+										<dl>
+											<dt class="small alternative">Seguridad</dt>
+											<dd><meter value="0" max="3" high="2" optimum="3" low="2" min="0" role="progressbar">(http://javimarcos.com/front-end/jquery/modernizr-masterclass/)</meter></dd>
+										</dl>
 									</li>
 								</ul>
 								<input name="comoNosConociste" type="hidden" />
