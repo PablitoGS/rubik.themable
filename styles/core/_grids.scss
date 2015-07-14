@@ -110,11 +110,6 @@ Styleguide #{$sgi-gridSystem}
 	}
 }
 
-[class*="panel-"] > .col-child { //aplica al padre del col-child: col-x
-	margin-left: 0;
-	margin-bottom: 0;
-}
-
 /*
 Medium devices
 
@@ -218,6 +213,11 @@ $gridColumns: 12;
 		}
 	}
 
+	[class*="panel-"] > & { //aplica al padre del col-child: col-x
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+
 	.col-child [class*="col-"]:first-of-type &[class*="panel-"] {
 		margin-left: 10px;
 	}
@@ -229,18 +229,6 @@ $gridColumns: 12;
 	@media print {
 		margin: 0;
 	}
-}
-
-.row-panel .col-child {
-	margin-left: 10px;
-
-	@include mediaquery ($bp-tablet) {
-		margin-left: 20px;
-	}
-}
-
-.row-panel [class*="col-"]:first-of-type .col-child {
-	margin-left: 10px;
 }
 
 .col-child-content {
@@ -279,6 +267,23 @@ $gridColumns: 12;
 		}
 	}
 }
+
+/*------------------------------------*\
+	$ROW PANEL
+\*------------------------------------*/
+
+.row-panel .col-child {
+	margin-left: 10px;
+
+	@include mediaquery ($bp-tablet) {
+		margin-left: 20px;
+	}
+}
+
+.row-panel [class*="col-"]:first-of-type .col-child {
+	margin-left: 10px;
+}
+
 /*------------------------------------*\
 	$ROW MATRIOSKA
 \*------------------------------------*/
