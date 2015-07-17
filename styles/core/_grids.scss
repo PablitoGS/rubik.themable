@@ -196,11 +196,11 @@ $gridColumns: 12;
 .col-child {
 	margin: 0 0 0 10px;
 
-	:last-of-type > & {
-		@include mediaquery ($bp-tablet) {
-			margin-left: 0;
-		}
-	}
+	// :last-of-type > & {
+	// 	@include mediaquery ($bp-tablet) {
+	// 		margin-left: 0;
+	// 	}
+	// }
 
 	.col-12-medium:last-of-type > & {
 
@@ -208,9 +208,9 @@ $gridColumns: 12;
 			margin-left: 10px;
 		}
 
-		@include mediaquery ($bp-desktop) {
-			margin-left: 0;
-		}
+		// @include mediaquery ($bp-desktop) {
+		// 	margin-left: 0;
+		// }
 	}
 
 	[class*="panel-"] > & { //aplica al padre del col-child: col-x
@@ -272,7 +272,7 @@ $gridColumns: 12;
 	$ROW PANEL
 \*------------------------------------*/
 
-.row-panel .col-child {
+.row-faux-card .col-child {
 	margin-left: 10px;
 
 	@include mediaquery ($bp-tablet) {
@@ -280,7 +280,7 @@ $gridColumns: 12;
 	}
 }
 
-.row-panel [class*="col-"]:first-of-type .col-child {
+.row-faux-card [class*="col-"]:first-of-type .col-child {
 	margin-left: 10px;
 }
 
@@ -353,6 +353,14 @@ Styleguide #{$sgi-equalHeightColumns}
 
 		.col-12-medium {
 			display: block;
+
+			.col-child {
+				margin-bottom: 10px;
+
+				@include mediaquery ($bp-desktop) {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		.col-child {
@@ -370,4 +378,14 @@ Styleguide #{$sgi-equalHeightColumns}
 
 	}
 
+}
+
+.row-panel {
+	> [class*="col-"]:last-of-type {
+  		.col-child {
+	      @include mediaquery ($bp-tablet) {
+	        margin-left: 0;
+	      }
+	    }
+  	}
 }
